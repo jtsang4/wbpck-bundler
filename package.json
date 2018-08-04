@@ -1,0 +1,12 @@
+{
+  "name": "wbpck-bundler",
+  "version": "1.0.0",
+  "description": "A project to learn how to pack Node's modules, basic on https://github.com/adamisntdead/wbpck-bundler",
+  "main": "src/index.js",
+  "author": "wtzeng",
+  "license": "MIT",
+  "dependencies": {
+    "detective": "^5.1.0",
+    "resolve": "^1.8.1"
+  }
+}
