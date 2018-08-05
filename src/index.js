@@ -34,7 +34,7 @@ function getModules(entryPath) {
     module.map = {}
     module.dependencies.forEach(dependency => {
       const basedir = path.dirname(module.filePath)
-      const dependencyPath = resolve(dependency, { basedir })
+      const dependencyPath = resolve.sync(dependency, { basedir })
       const insideModuleObj = getModuleObject(dependencyPath)
       module.map[dependency] = insideModuleObj.id
 
@@ -57,7 +57,7 @@ function pack(modules) {
       },
       map: ${JSON.stringify(moduleObj.map)}
     }
-  `).join('')
+  `).join(',')
 
   return `(modules => {
     const require = id => {
