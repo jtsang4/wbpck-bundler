@@ -21,7 +21,7 @@
 
 打包通常从一个入口文件开始，最终将所有需要的文件打包到一个文件中。
 
-![](_v_images/entry.png)
+![](images/bundler-entry.png)
 
 打包器主要进行两步任务:
 
@@ -84,7 +84,7 @@ const lib = require(libName)
 
 那么向这个函数传入模块的路径，我们可以得到什么呢？
 
-![createModuleObject](_v_images/createmodule.png)
+![createModuleObject](images/bundler-createmodule.png)
 
 接下来做什么？我们开始进行依赖图的解析
 
@@ -100,7 +100,7 @@ const lib = require(libName)
 
 这也意味着我们可以把所有模块的信息存储在一个非嵌套式的对象中，使用 id 作为对象的 key。
 
-![id](_v_images/map.png)
+![id](images/bundler-map.png)
 
 ### 解析
 
@@ -198,7 +198,7 @@ function pack(modules) {
 
 那么对一个模块对象来说，这种转换输出了什么东西呢？
 
-![transform](_v_images/transform.png)
+![transform](images/bundler-transform.png)
 
 接下来的步骤就有点难懂了，但是你可以发现我们做的事是把源码包裹了起来，并利用之前提到的工厂函数，向其提供 `module` 和 `require`。
 
